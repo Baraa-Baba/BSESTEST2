@@ -3,15 +3,36 @@ import '../css/App.css'
 import Buy from './Buy'
 import Signin from './SignIn'; 
 import '../messaging_init_in_sw'
+import AboutUs from './AboutUs';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">  
-    <h1 className='main-header'>بيع وأشتري أي شيئ في صيدا</h1>
-    <h2 className='second-header'>الإستلام والتسليم علينا</h2>
-    <Buy />
+    <div className="App">   
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li> 
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/about">
+            <AboutUs />
+          </Route> 
+        </Switch>
+      </div>
+    </Router>
     </div>
+    
   )
 }
 
