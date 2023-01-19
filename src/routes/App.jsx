@@ -1,7 +1,8 @@
 import { useState } from 'react' 
 import '../css/App.css'   
 import Buy from './Buy'
-import Signin from './SignIn';  
+import Signin from './SignIn'; 
+import '../messaging_init_in_sw'
 function App() {
   const [count, setCount] = useState(0)
 
